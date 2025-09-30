@@ -1,0 +1,54 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore test reports and logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore environment files
+.env
+.venv/
+env/
+venv/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore OS-specific files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Ignore screenshots or test artifacts
+screenshots/
+reports/
+output/
+
+# Ignore browser drivers
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+
+# Ignore node_modules if using JS tools
+node_modules/
+
+# Ignore Git itself
+.git/
+
+# Ignore system folders
+$Recycle.Bin/
+Config.Msi/
+Documents and Settings/
+inetpub/
+Intel/
+OneDriveTemp/
+Program Files/
+ProgramData/
+WindowsApps/
