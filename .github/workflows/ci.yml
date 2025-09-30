@@ -1,14 +1,21 @@
-name: OrangeHRM Automation CI
+name: Run Selenium Tests
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
 
     steps:
     - name: Checkout code
@@ -24,6 +31,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Selenium tests
+    - name: Run tests
       run: |
-        pytest tests/tests_workflow.py
+        pytest --maxfail=1 --disable-warnings --tb=short
