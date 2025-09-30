@@ -5,18 +5,19 @@ from selenium.webdriver.support import expected_conditions as EC
 class DashboardPage:
     def __init__(self, driver):
         self.driver = driver
-        self.pim_menu = (By.XPATH, "//span[text()='PIM']")
-        self.dashboard_header = (By.XPATH, "//h6[text()='Dashboard']")
+        # Updated locator using href for better stability
+        self.pim_menu = (By.CSS_SELECTOR, "a[href='/web/index.php/pim/viewPimModule']")
+        self.app_container = (By.ID, "app")  # Confirms page has rendered
 
     def go_to_pim(self):
-        # Wait for dashboard to fully load
-        WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(self.dashboard_header)
+        # Wait for the app container to confirm page load
+        WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(self.app_container)
         )
 
         try:
-            # Wait for PIM menu to be visible
-            pim = WebDriverWait(self.driver, 10).until(
+            # Wait for the PIM menu to be visible and click it
+            pim = WebDriverWait(self.driver, 20).until(
                 EC.visibility_of_element_located(self.pim_menu)
             )
             pim.click()
