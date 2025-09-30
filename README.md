@@ -12,10 +12,10 @@ Verify Employees in the Employee List Searches for each added employee in the Em
 
 Generate HTML Report Produces a detailed test report using pytest and makes it publicly viewable via GitHub Pages.
 
-View the Test Report
+View the Test Report:
 You can view the full automation report here: https://lahari1237.github.io/orange-hrm-automation/
 
-Technologies Used
+Technologies Used :
 Python
 
 Selenium WebDriver
@@ -23,4 +23,5 @@ Selenium WebDriver
 Pytest
 
 GitHub Pages (for report hosting)
+
 
